@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Student Record Form</title>
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="roll_number">Roll Number:</label><br>
+    <input type="number" id="roll_number" name="roll_number"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="course">Course:</label><br>
+    <input type="text" id="course" name="course"><br><br>
+
+    <label for="admission_date">Admission Date:</label><br>
+    <input type="date" id="admission_date" name="admission_date"><br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
+</body>
+</html>
