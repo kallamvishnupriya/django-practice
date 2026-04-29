@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tasks</title>
+</head>
+<body>
+
+<h1>My Tasks</h1>
+
+<a href="{% url 'task_create' %}">Create New Task</a>
+
+<hr>
+
+<!-- Show tasks -->
+{% for task in tasks %}
+
+    <h3>{{ task.title }}</h3>
+
+    <p>{{ task.description }}</p>
+
+    <p>{{ task.is_completed }}</p>
+
+    <p>{{ task.created_at }}</p>
+
+    <a href="{% url 'task_edit' task.id %}">Edit</a>
+    <a href="{% url 'task_delete' task.id %}">Delete</a>
+
+    <hr>
+
+{% empty %}
+    <p>No tasks found</p>
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <h1>Hello, {{ user.username }}</h1>
+
+    <hr>
+
+    <h2>Task Summary</h2>
+
+    <p>Total Tasks: {{ total }}</p>
+    <p>Completed: {{ completed }}</p>
+    <p>Pending: {{ pending }}</p>
+
+    <hr>
+
+    <h2>Quick Actions</h2>
+
+    <a href="{% url 'task_create' %}">➕ Create Task</a><br>
+    <a href="{% url 'tasks' %}">📋 View Tasks</a>
+
+    <hr>
+
+    <h2>Recent Tasks</h2>
+
+    {% for task in recent_tasks %}
+        <p>
+            {{ task.title }} - {{ task.is_completed }}
+        </p>
+    {% empty %}
+        <p>No recent tasks</p>
+    {% endfor %}
+
+</body>
+</html>
