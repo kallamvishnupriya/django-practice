@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Roll Number</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Admission Date</th>
+    </tr>
+
+    {% for student in data %}
+    <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.roll_number }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.course }}</td>
+        <td>{{ student.admission_date }}</td>
+        <td>
+        <a href="{% url 'delete_student' student.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</body>
+</html>
