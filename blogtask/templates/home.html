@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Welcome To BlogPage</h1>
+        {% for i in data %}
+        <p>
+            {{i.title}}
+            {{i.description}}
+            <a href="{% url 'read' i.id %}">Read</a>
+            <a href="{% url 'edit' i.id %}">Edit</a>
+            <a href="{% url 'delete' i.id %}">Delete</a>
+        </p>
+        {% endfor %}
+        <a href="{% url 'back' %}">
+            <button type="button">Go Back</button>
+        </a>
+    </center>
+</body>
+</html>

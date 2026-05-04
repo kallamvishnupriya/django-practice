@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h2>All Posts ({{ posts.count }})</h2>
+<hr>
+{% for post in posts %}
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content|truncatewords:20 }}</p>
+
+    <a href="{% url 'post_detail' post.id %}">Read</a>
+    <a href="{% url 'post_update' post.id %}">Edit</a>
+    <a href="{% url 'delete_post' post.id %}">Delete</a>
+    <hr>
+{% empty %}
+    <p>No posts</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> TODO Task </h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="task">Enter Task:</label>
+        <input type="text" placeholder="Enter task.." name="task">
+        <button type="submit">Add</button>
+    </form>
+    {% for i in data %}
+        <p>
+            {{ i.task }}
+            <a href="{% url 'delete_task1' i.id %}">Delete</a>
+            <a href="{% url 'edit_task' i.id %}">Edit</a>
+        </p>
+    {% endfor %}
+</body>
+</html>
